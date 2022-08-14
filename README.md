@@ -16,3 +16,11 @@ How to set up Testman for local development
 - Put usernames on different lines in `usernames.txt`
 - Enable run script `chmod +x run.sh`
 - Run the program `./run.sh`
+
+## Use case
+```python
+python3 -i testman.py
+>>> from 
+>>> t = Testman()
+>>> t.submit('two-sum', 'solution.py')
+```
