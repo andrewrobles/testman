@@ -1,4 +1,5 @@
 venv
 geckodriver
 geckodriver.log
+settings.json
 *.pyc
