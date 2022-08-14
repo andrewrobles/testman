@@ -14,4 +14,5 @@ How to set up Testman for local development
 ```
 - Add LeetCode `username` and `password` in `settings.json`
 - Put usernames on different lines in `usernames.txt`
-- Verify tests run without failure `python3 test.py`
+- Enable run script `chmod +x run.sh`
+- Run the program `./run.sh`
