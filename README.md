@@ -20,7 +20,7 @@ How to set up Testman for local development
 ## Use case
 ```python
 python3 -i testman.py
->>> from 
+>>> from solution import Solution
 >>> t = Testman()
 >>> t.submit('two-sum', 'solution.py')
 ```

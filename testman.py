@@ -7,7 +7,7 @@ import configparser
 
 import json
 
-class Bot:
+class Testman:
     def __init__(self):
         file = open('settings.json', 'r')
         settings = json.load(file)
