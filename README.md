@@ -19,8 +19,17 @@ How to set up Testman for local development
 
 ## Use case
 ```python
-python3 -i testman.py
+>>> from testman import Testman
 >>> from solution import Solution
 >>> t = Testman()
 >>> t.submit('two-sum', 'solution.py')
+```
+
+# Testing
+```python
+>>> from testman import Testman
+>>> from solution import Solution
+>>> t = Testman()
+>>> from testman import submit
+>>> t.run(submit, 'two-sum', 'solution')
 ```

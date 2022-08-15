@@ -36,34 +36,35 @@ class Testman:
         login_button.click()
         sleep(5)  
 
-    def submit(self, problem, filename):
-        file = open(filename, 'r')
-        solution = file.read()
-        file.close()
-        self._browser.get('https://leetcode.com/problems/{}/'.format(problem))
+    def run(self, function, *args):
+        function(self, *args)
 
-        sleep(2)
-        select = self._browser.find_element_by_css_selector("div[role='combobox']")
-        select.click()
-        sleep(1)
-        python = self._find_element_by_text('Python3')
-        python.click()
-
-        sleep(2)
-        codeMirror = self._browser.find_element_by_css_selector('.CodeMirror textarea')
-
-        action_chains = ActionChains(self._browser)
-        action_chains.click(codeMirror).perform()
-        action_chains.key_down(Keys.COMMAND).send_keys("a").perform()
-        action_chains.send_keys(Keys.DELETE).perform()
-        # sleep(2)
-        
-        action_chains.send_keys(solution).perform()
-        # action_chains.key_down(Keys.COMMAND).send_keys(Keys.DOWN).send_keys(Keys.DOWN).send_keys(Keys.DELETE).perform()
-        # action_chains.key_down(Keys.DELETE).perform()
 
     def _find_element_by_text(self, text):
         return self._browser.find_element_by_xpath("//*[text()='{}']".format(text)) 
 
     def _find_elements_by_text(self, text):
         return self._browser.find_elements_by_xpath("//*[text()='{}']".format(text))
+
+
+def submit(self, problem, filename):
+    file = open(filename, 'r')
+    solution = file.read()
+    file.close()
+    self._browser.get('https://leetcode.com/problems/{}/'.format(problem))
+
+    sleep(2)
+    select = self._browser.find_element_by_css_selector("div[role='combobox']")
+    select.click()
+    sleep(1)
+    python = self._find_element_by_text('Python3')
+    python.click()
+
+    sleep(2)
+    codeMirror = self._browser.find_element_by_css_selector('.CodeMirror textarea')
+
+    action_chains = ActionChains(self._browser)
+    action_chains.click(codeMirror).perform()
+    action_chains.key_down(Keys.COMMAND).send_keys("a").perform()
+    action_chains.send_keys(Keys.DELETE).perform()        
+    # action_chains.send_keys(solution).perform()
