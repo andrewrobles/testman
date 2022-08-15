@@ -41,6 +41,14 @@ class Testman:
         solution = file.read()
         file.close()
         self._browser.get('https://leetcode.com/problems/{}/'.format(problem))
+
+        sleep(2)
+        select = self._browser.find_element_by_css_selector("div[role='combobox']")
+        select.click()
+        sleep(1)
+        python = self._find_element_by_text('Python3')
+        python.click()
+
         sleep(2)
         codeMirror = self._browser.find_element_by_css_selector('.CodeMirror textarea')
 
