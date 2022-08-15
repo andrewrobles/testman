@@ -1,5 +1,6 @@
 # Testman
 ![plot](logo.jpeg)
+
 How to set up Testman for local development
 - Download Firefox webdriver https://github.com/mozilla/geckodriver/releases 
 - Unzip `geckodriver` to root directory
