@@ -54,7 +54,13 @@ class Testman:
 
         action_chains = ActionChains(self._browser)
         action_chains.click(codeMirror).perform()
+        action_chains.key_down(Keys.COMMAND).send_keys("a").perform()
+        action_chains.send_keys(Keys.DELETE).perform()
+        # sleep(2)
+        
         action_chains.send_keys(solution).perform()
+        # action_chains.key_down(Keys.COMMAND).send_keys(Keys.DOWN).send_keys(Keys.DOWN).send_keys(Keys.DELETE).perform()
+        # action_chains.key_down(Keys.DELETE).perform()
 
     def _find_element_by_text(self, text):
         return self._browser.find_element_by_xpath("//*[text()='{}']".format(text)) 
